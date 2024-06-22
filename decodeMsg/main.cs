@@ -11,11 +11,12 @@ namespace decodeMsg
         static void Main()
         {
             // Get the directory with the executable file
-            string exeDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string filesDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            filesDirectory += "\\decodeFiles";
             Console.WriteLine("Write name of a file to decode without .txt extension");
             string name = Console.ReadLine();
             // Combine the current directory with the path to the text file
-            string message_file = Path.Combine(exeDirectory, name+=".txt");
+            string message_file = Path.Combine(filesDirectory, name+=".txt");
 
             // Call the method to read file massage
             string fileContent = decodeMessageFile(message_file);
